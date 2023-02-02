@@ -12,6 +12,11 @@
 
     <script>
         const myarr = ['a', 2, 'ab'];
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        document.write(arr1.indexOf(1) + "<br>");
+        document.write(myarr.includes(2) + "<br>");
+        document.write(myarr.includes('ab') + "<br>");
         document.write(myarr[0] + "<br>");
         myarr[1] = 3;
         document.write("updated array is :" + myarr + "<br>");
@@ -34,6 +39,7 @@
         myarr.unshift("0");
         document.write("updated array is (after unshift):" + myarr + "<br>");
         const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        //slice function return the selected element as a new array
         const citrus = fruits.slice(1, 3);
         document.write("updated array is (after slice):" + citrus + "<br>");
         fruits.sort();
@@ -45,8 +51,6 @@
         myarr[6] = 'd';
         document.write(myarr + "<br>");
         document.write("to check whether given element is array or not :" + Array.isArray(myarr) + "<br>");
-        const arr1 = [1, 2, 3];
-        const arr2 = [4, 5, 6];
         document.write("array1: " + arr1 + "<br>");
         document.write("array2: " + arr2 + "<br>");
         const result = arr1.concat(arr2);
@@ -62,15 +66,18 @@
             return age > 18;
         }
         document.write("fill method:" + arr1.fill(0) + "<br>");
+
         document.write("filter");
         document.write("<p id=\"demo1\"></p>");
         document.getElementById("demo1").innerHTML = ages.filter(checkAge);
+        //return all element who satisfy the condition
         function checkAge(age) {
             return age > 18;
         }
         document.write("find");
         document.write("<p id=\"demo2\"></p>");
         document.getElementById("demo2").innerHTML = ages.find(checkAge);
+        //only return fiest element who satisfy given condition
         function checkAge(age) {
             return age > 18;
         }
@@ -90,15 +97,19 @@
 
         //The Array.from() method returns an array from any iterable object.
         document.write("from :<br>");
-        const a = "abcde<br>";
+        const a = "abcde";
+        // const arr4 = [1,2,3,'ab'];
+        // console.log(arr4.includes('ab'));
         const arr3 = Array.from(a);
-        document.write(arr3);
+
+        document.write("array3:" + arr3);
+        document.write("<br>");
         //The includes() method returns true if an array contains a specified value.
         document.write("includes<br>");
-        document.write(myarr.includes('ab') + "<br>");
-        document.write(arr1.includes(3) + "<br>");//doubt
+        // document.write(myarr.includes(2) + "<br>");
+        //console.log(arr1.includes(3) );//doubt
         document.write("indexof<br>");
-        document.write(arr1.indexOf(1) + "<br>");//doubt
+        // document.write(arr1.indexOf(1) + "<br>");//doubt
         document.write(myarr.indexOf('ab') + "<br>");
         document.write(myarr.lastIndexOf('ab') + "<br>");
 
